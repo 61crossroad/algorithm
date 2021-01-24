@@ -1,5 +1,4 @@
 # algorithm
-## algorithm &amp; data structure study
-
-quick sort
-problem solving
+## algorithm &amp; data structure study  
+quick sort  
+problem solving  
