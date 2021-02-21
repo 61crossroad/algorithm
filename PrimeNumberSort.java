@@ -63,7 +63,6 @@ public class App {
         }
 
         answer = zero ? "0" : sb.toString();
-
         return answer;
     }
 
