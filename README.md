@@ -1,8 +1,8 @@
 # algorithm
 ## algorithm &amp; data structure study  
-quick sort / merge sort  
+Quick Sort / Merge Sort  
 Brute Force  
 DFS / BFS  
 Binary Search  
 Collections Interface  
-problem solving
++ Problem Solving
