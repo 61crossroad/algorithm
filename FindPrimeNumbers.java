@@ -59,7 +59,6 @@ public class App {
                 cnt++;
             }
         }
-        
     }
 
     public static void main(String[] args) throws Exception {
