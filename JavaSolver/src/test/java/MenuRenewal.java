@@ -1,14 +1,25 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import org.junit.jupiter.api.Test;
 
-class Solution {
-    public String[] solution(String[] orders, int[] course) {
+import java.util.*;
+
+// TODO?
+public class MenuRenewal {
+
+    @Test
+    public void run() {
+        String[] a = solution(
+                new String[] {
+                        "ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"
+                },
+                new int[] {2, 3, 4}
+        );
+
+        for (String ans : a) {
+            System.out.println(ans);
+        }
+    }
+
+    private String[] solution(String[] orders, int[] course) {
         String[] answer = {};
 
         Map<String, Integer> resultMap = new HashMap<>();
@@ -46,7 +57,7 @@ class Solution {
         }
 
         List<String> result = new ArrayList<>();
-        
+
         Iterator<String> it = resultMap.keySet().iterator();
         while (it.hasNext()) {
             String key = it.next();
@@ -58,21 +69,5 @@ class Solution {
         result.toArray(answer);
 
         return answer;
-    }
-}
-
-public class App {
-    public static void main(String[] args) throws Exception {
-        Solution s = new Solution();
-        String[] a = s.solution(
-            new String[] {
-                "ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"
-            },
-            new int[] {2, 3, 4}
-        );
-
-        for (String ans : a) {
-            System.out.println(ans);
-        }
     }
 }

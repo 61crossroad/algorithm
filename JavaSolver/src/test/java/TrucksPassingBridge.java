@@ -1,12 +1,16 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import org.junit.jupiter.api.Test;
 
-public class App {
-    public static class Bridge {
+import java.util.*;
+
+// TODO!
+public class TrucksPassingBridge {
+
+    @Test
+    public void run() {
+        solution(2, 10, new int[] {7, 4, 5, 6});
+    }
+
+    private class Bridge {
         int time;
         int weight;
         List<Integer> ready;
@@ -14,7 +18,7 @@ public class App {
         List<Integer> over;
     }
 
-    public static int solution(int bridge_length, int weight, int[] truck_weights) {
+    private int solution(int bridge_length, int weight, int[] truck_weights) {
         // int answer = 0;
         int answer = Integer.MAX_VALUE;
 
@@ -47,13 +51,9 @@ public class App {
                     answer = bridge.time;
                 }
             }
-            
-        }
-        
-        return answer;
-    }
 
-    public static void main(String[] args) throws Exception {
-        solution(2, 10, new int[] {7, 4, 5, 6});
+        }
+
+        return answer;
     }
 }
