@@ -20,7 +20,7 @@ public class ReorderLogFiles {
         Arrays.stream(result).forEach(System.out::println);
     }
 
-    public String[] solution(String[] input) {
+    private String[] solution(String[] input) {
         String al = "^[a-zA-Z\\s]*$";
         String num = "^[0-9\\s]*$";
 
