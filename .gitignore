@@ -1,0 +1,31 @@
+# Mac & etc
+.DS_Store
+*.zip
+Help.md
+
+# IntelliJ
+.idea/
+.idea_modules/
+*.iml
+
+# VS Code
+.vscode/
+
+# Build
+out/
+bin/
+target/
+build/
+**/build/
+*.class
+
+# Gradle
+.gradle/
+
+# Python
+__pycache__/
+*.pyc
+env/
+_env/
+.python-version
+
