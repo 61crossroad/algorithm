@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class MostCommonWord {
 
@@ -13,41 +14,27 @@ public class MostCommonWord {
     }
 
     private String solution(String para, String[] banned) {
-        String filtered = para.replaceAll("[^a-zA-Z\\s]", "");
-        String[] words = filtered.split(" ");
-        boolean[] checked = new boolean[words.length];
-
-        int max = 0;
-        String maxWord = "";
-        for (int i = 0; i < words.length; i++) {
-            if (checked[i]) {
-                continue;
-            }
-
-            boolean isBanned = false;
-            for (String ban : banned) {
-                if (ban.equals(words[i])) {
-                    isBanned = true;
-                    break;
-                }
-            }
-
-            if (!isBanned) {
-                checked[i] = true;
-                int count = 0;
-                for (String word : words) {
-                    if (words[i].equals(word.toLowerCase())) {
-                        count++;
+        String filtered = para.replaceAll("[^\\w\\s]", "").toLowerCase();
+        List<String> list = Arrays.stream(filtered.split(" "))
+                .filter(w -> {
+                    for(String ban : banned) {
+                        if (w.equals(ban)) {
+                            return false;
+                        }
                     }
-                }
+                    return true;
+                }).collect(Collectors.toList());
 
-                if (max < count) {
-                    max = count;
-                    maxWord = words[i];
-                }
-            }
-        }
+        Map<String, Integer> counts = new HashMap<>();
 
-        return maxWord;
+        list.forEach(w -> {
+            int count = counts.getOrDefault(w, 0);
+            count++;
+            counts.put(w, count);
+        });
+
+        return Collections
+                .max(counts.entrySet(), Comparator.comparingInt(Map.Entry::getValue))
+                .getKey();
     }
 }
