@@ -18,6 +18,7 @@ target/
 build/
 **/build/
 *.class
+*.jar
 
 # Gradle
 .gradle/
