@@ -3,6 +3,12 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 import java.time.LocalTime;
 
+/*
+    문자열 처리와 시간 데이터 파싱이 전부인 문제다.
+    JDK 1.8부터 Local~ 시리즈를 사용할 수 있다.
+    처음엔 X# 형식의 문자열을 손수 다 파싱했지만 JDK 기본 라이브러리를 최대한 이용하는게 낫다.
+*/
+
 public class MusicInfos {
 
     @Test
