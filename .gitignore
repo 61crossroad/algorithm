@@ -2,6 +2,8 @@
 .DS_Store
 *.zip
 Help.md
+.metadata
+_test/
 
 # IntelliJ
 .idea/
@@ -29,7 +31,4 @@ __pycache__/
 env/
 _env/
 .python-version
-
-# etc
-_test/
 
