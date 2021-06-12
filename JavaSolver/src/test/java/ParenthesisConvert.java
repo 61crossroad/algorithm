@@ -17,6 +17,7 @@ public class ParenthesisConvert {
 
     @Test
     public void run() {
+        System.out.println(solution("()))((()"));
     }
 
     private String solution(String p) {
