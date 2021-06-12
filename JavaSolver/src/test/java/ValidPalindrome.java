@@ -8,7 +8,7 @@ public class ValidPalindrome {
                 solution("race a car"));
     }
 
-    public boolean solution(String s) {
+    private boolean solution(String s) {
         StringBuilder str = new StringBuilder();
 
         for (int i = 0; i < s.length(); i++) {
