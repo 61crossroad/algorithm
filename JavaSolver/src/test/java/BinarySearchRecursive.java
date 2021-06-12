@@ -9,7 +9,7 @@ public class BinarySearchRecursive {
     public void run() {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 15, 17, 20);
         int sol = location(0, list.size(), 11, list);
-        System.out.println("sol = " + sol);
+        System.out.println(sol);
     }
 
     private int location(int low, int high, int x, List<Integer> list) {
