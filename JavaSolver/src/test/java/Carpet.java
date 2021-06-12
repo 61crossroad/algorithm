@@ -1,5 +1,14 @@
-public class App {
-    public static int[] solution(int brown, int yellow) {
+import org.junit.jupiter.api.Test;
+
+public class Carpet {
+
+    @Test
+    public void run() {
+        int[] sol = solution(24, 24);
+        System.out.println(sol[0] + " " + sol[1]);
+    }
+
+    private static int[] solution(int brown, int yellow) {
         int[] answer = {};
 
         int x;
@@ -13,9 +22,5 @@ public class App {
         int[] result = new int[] {x + 2, yellow / x + 2};
         answer = result;
         return answer;
-    }
-    public static void main(String[] args) throws Exception {
-        int[] sol = solution(24, 24);
-        System.out.println(sol[0] + " " + sol[1]);
     }
 }
