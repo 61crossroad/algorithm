@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/*
+    링크드 리스트를 이용한 간단한 스택 문제
+    스택은 고정된 위치? 인덱스에서 add(=tail), remove(=head)만 수행하므로 각각 O(1)의 시간복잡도를 가지는 링크드 리스트가 효율적이다.
+*/
+
 public class DeploySchedule {
     @Test
     public void run() {
