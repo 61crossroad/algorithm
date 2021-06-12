@@ -30,3 +30,6 @@ env/
 _env/
 .python-version
 
+# etc
+_test/
+
