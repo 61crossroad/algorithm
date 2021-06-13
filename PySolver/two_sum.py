@@ -9,7 +9,7 @@ def brute_force(nums: List[int], target: int) -> List[int]:
 
 
 def in_search(nums: List[int], target: int) -> List[int]:
-    for i, n in enumerate(nums): # index, value
+    for i, n in enumerate(nums):  # index, value
         complement = target - n
 
         if complement in nums[i + 1:]:
