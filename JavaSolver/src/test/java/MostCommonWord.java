@@ -7,14 +7,16 @@ public class MostCommonWord {
 
     @Test
     public void run() {
-        String paragraph = "Bob hit a ball, the hit BALL flew far after it was hit by bAll.";
-        String[] banned = new String[] {"hit"};
+        // String paragraph = "Bob hit a ball, the hit BALL flew far after it was hit by bAll.";
+        String paragraph = "a, a, a, a, b,b,b,c, c";
+        String[] banned = new String[] {"a"};
 
         System.out.println(solution(paragraph, banned));
     }
 
-    private String solution(String para, String[] banned) {
-        String filtered = para.replaceAll("[^\\w\\s]", "").toLowerCase();
+    private String solution(String paragraph, String[] banned) {
+        String filtered = paragraph.replaceAll("[^\\w]", " ").replaceAll("\\s+", " ").toLowerCase();
+        System.out.println(filtered);
         List<String> list = Arrays.stream(filtered.split(" "))
                 .filter(w -> {
                     for(String ban : banned) {
