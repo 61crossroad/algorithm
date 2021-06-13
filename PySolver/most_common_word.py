@@ -21,4 +21,4 @@ if __name__ == '__main__':
     paragraph = 'Bob hit a ball, the hit BALL flew far after it was hit.'
     banned = ['hit']
 
-    print(Solution.most_common_word(paragraph, banned))
+    print(Solution().most_common_word(paragraph, banned))
