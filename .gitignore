@@ -12,6 +12,10 @@ _test/
 
 # VS Code
 .vscode/
+.metadata/
+.settings/
+.classpath
+.project
 
 # Build
 out/
