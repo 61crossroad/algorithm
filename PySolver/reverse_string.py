@@ -22,5 +22,5 @@ class Solution:
 
 if __name__ == '__main__':
     # Solution.reverse_list(["h", "e", "l", "l", "o"])
-    Solution.reverse(["h", "e", "l", "l", "o"])
-    Solution.reverse_string('nooyij')
+    Solution().reverse(["h", "e", "l", "l", "o"])
+    Solution().reverse_string('nooyij')
