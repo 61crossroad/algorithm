@@ -5,7 +5,7 @@ public class ValidPalindrome {
     @Test
     public void run() {
         System.out.println(
-                solution("race a car"));
+                solution(" "));
     }
 
     private boolean solution(String s) {
@@ -20,6 +20,9 @@ public class ValidPalindrome {
 
         for (int i = 0; i <= str.length() / 2; i++) {
             int j = str.length() - i - 1;
+            if (j < 0) {
+                return true;
+            }
             char h = str.charAt(i);
             char t = str.charAt(j);
             if (h != t) {
