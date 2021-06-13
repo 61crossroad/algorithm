@@ -19,7 +19,7 @@ public class PermCheck {
 
     private int solution(int[] A) {
         Arrays.sort(A);
-        int n = A[A.length - 1];
+        // int n = A[A.length - 1];
 
         if (A[0] != 1) {
             return 0;

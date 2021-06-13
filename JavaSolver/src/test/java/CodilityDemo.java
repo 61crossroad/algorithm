@@ -1,6 +1,16 @@
 import java.util.Arrays;
 
+import org.junit.jupiter.api.Test;
+
 public class CodilityDemo {
+
+    @Test
+    public void run() {
+        int[] a = new int[] {3, 1, 4, 5, 6};
+
+        System.out.println(solution(a));
+    }
+
     private int solution(int[] A) {
         Arrays.sort(A);
         int answer = A[A.length - 1] + 1;
