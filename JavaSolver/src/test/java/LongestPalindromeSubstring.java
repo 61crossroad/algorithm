@@ -10,16 +10,16 @@ public class LongestPalindromeSubstring {
         System.out.println(solution(input));
     }
 
-    private String solution(String input) {
-        String rev = new StringBuilder(input).reverse().toString();
-        if (input.length() < 2 || input.equals(rev)) {
-            return input;
+    private String solution(String s) {
+        String rev = new StringBuilder(s).reverse().toString();
+        if (s.length() < 2 || s.equals(rev)) {
+            return s;
         }
 
         String max = "";
-        for (int i = 0; i < input.length() - 1; i++) {
-            String even = expand(i, i + 1, input);
-            String odd = expand(i, i + 2, input);
+        for (int i = 0; i < s.length() - 1; i++) {
+            String even = expand(i, i + 1, s);
+            String odd = expand(i, i + 2, s);
             String temp;
 
             if (even.length() < odd.length()) {
