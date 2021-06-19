@@ -22,7 +22,7 @@ class Solution:
                 dist[node] = time
                 # evaluate every node via heappop(node)
                 for v, w in graph[node]:  # list[node] -> tuple
-                    print(node, v, w)  # s -> node -(w)-> v
+                    # print(node, v, w)  # s -> node -(w)-> v
                     alt = time + w
                     heapq.heappush(q, (alt, v))
 
