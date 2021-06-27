@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 public class Permutations {
-    private List<List<Integer>> results = new ArrayList<>();
+    private final List<List<Integer>> results = new ArrayList<>();
     
     public List<List<Integer>> permute(int[] nums) {
         List<Integer> elements = Arrays.stream(nums).boxed().collect(Collectors.toList());
@@ -19,8 +19,7 @@ public class Permutations {
     private void dfs(List<Integer> elements, List<Integer> perm) {
         if (elements == null || elements.isEmpty()) {
             results.add(
-                perm.stream()
-                    .collect(Collectors.toList()));
+                    new ArrayList<>(perm));
         } else {
             for (Integer e : elements) {
                 List<Integer> nextElements = 
@@ -39,11 +38,9 @@ public class Permutations {
     public void run() {
         int[] nums = new int[] {1, 2, 3};
         List<List<Integer>> output = permute(nums);
-        output.forEach(perm -> {
-            System.out.println(
-                perm.stream()
-                    .map(num -> String.valueOf(num))
-                    .collect(Collectors.joining(" ")));
-        });
+        output.forEach(perm -> System.out.println(
+            perm.stream()
+                .map(String::valueOf)
+                .collect(Collectors.joining(" "))));
     }
 }
