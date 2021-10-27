@@ -33,8 +33,7 @@ public class MusicInfos {
         String answer = "(None)";
         long len = -1;
 
-        for (int i = 0; i < musicinfos.length; i++) {
-            String mi = musicinfos[i];
+        for (String mi : musicinfos) {
             String[] mia = mi.split(",");
 
             LocalTime sTime = LocalTime.of(Integer.parseInt(mia[0].substring(0, 2)), Integer.parseInt(mia[0].substring(3, 5)));
@@ -49,7 +48,7 @@ public class MusicInfos {
                     index = 0;
                 }
 
-                sb.append(mia[3].substring(index, index + 1));
+                sb.append(mia[3].charAt(index));
                 index++;
             }
             String music = sb.toString();
@@ -95,4 +94,5 @@ public class MusicInfos {
 
         return sb.toString(); */
     }
+
 }
