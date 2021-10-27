@@ -1,58 +1,56 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 // TODO!
 public class TrucksPassingBridge {
 
     @Test
     public void run() {
-        solution(2, 10, new int[] {7, 4, 5, 6});
+        System.out.println(
+//                solution(2, 10, new int[] {7, 4, 5, 6})
+//                solution(100, 100, new int[] {10, 10, 10, 10, 10, 10, 10, 10, 10, 10})
+                solution(5, 5, new int[] {5})
+        );
     }
 
-    private class Bridge {
+    class Truck {
         int time;
         int weight;
-        List<Integer> ready;
-        Map<Integer, Integer> pass;
-        List<Integer> over;
+        Truck(int time, int weight) {
+            this.time = time;
+            this.weight = weight;
+        }
     }
 
     private int solution(int bridge_length, int weight, int[] truck_weights) {
-        // int answer = 0;
-        int answer = Integer.MAX_VALUE;
+        int answer = 0;
+        int currentWeight = 0;
+        int time = 0;
+        Queue<Truck> queue = new LinkedList<>();
 
-        Queue<Bridge> queue = new LinkedList<>();
-
-        for (int i = 0; i < truck_weights.length; i++) {
-            Bridge bridge = new Bridge();
-            bridge.time = 1;
-            bridge.ready = new ArrayList<>();
-            bridge.over = new ArrayList<>();
-
-            bridge.pass = new HashMap<>();
-            bridge.pass.put(1, i);
-            bridge.weight = weight - truck_weights[i];
-
-            for (int j = 0; j < truck_weights.length; j++) {
-                if (j != i) {
-                    bridge.ready.add(truck_weights[j]);
+        for (int thisWeight : truck_weights) {
+            if (weight - currentWeight >= thisWeight) {
+                queue.add(new Truck(++time, thisWeight));
+                currentWeight += thisWeight;
+            } else {
+                while (weight - currentWeight < thisWeight && !queue.isEmpty()) {
+                    Truck passed = queue.poll();
+                    currentWeight -= passed.weight;
+                    time = passed.time + bridge_length;
                 }
+                queue.add(new Truck(time, thisWeight));
+                currentWeight += thisWeight;
             }
-
-            queue.add(bridge);
         }
 
+        Truck last = null;
         while (!queue.isEmpty()) {
-            Bridge bridge = queue.poll();
-
-            if (bridge.ready.isEmpty() && bridge.pass.isEmpty()) {
-                if (bridge.time < answer) {
-                    answer = bridge.time;
-                }
-            }
-
+            last = queue.poll();
         }
+
+        answer = last.time + bridge_length;
 
         return answer;
     }
