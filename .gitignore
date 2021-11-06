@@ -11,6 +11,10 @@ JavaTester/
 .idea_modules/
 *.iml
 
+Nf21103001.java
+Nf21103002.java
+Nf21103004.java
+
 # VS Code
 .vscode/
 .metadata/
